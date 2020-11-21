@@ -1,2 +1,3 @@
 # wordpress-patrickp-theme
-the theme I use for my website
+The theme I use for my website
+http://www.patrickp.tech/

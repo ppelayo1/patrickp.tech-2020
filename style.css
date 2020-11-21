@@ -1,0 +1,467 @@
+/*
+Theme Name: patrickp.tech 2020
+Author: Patrick Pelayo
+Description: A redesign of the home site 3-8-2020
+Version: 0.0.1
+
+*/
+* {
+  font-family: "Open Sans", sans-serif;
+}
+* h1 {
+  font-size: 40px;
+}
+* h2 {
+  font-size: 32px;
+}
+* p {
+  font-size: 20px;
+}
+* span {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 470px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  span {
+    font-size: 15px;
+  }
+}
+body header {
+  background-image: url("img/header%20gradiant.png");
+  background-size: contain;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body header h1 a {
+  color: white;
+}
+body header h1 a:hover {
+  color: white;
+  text-decoration: none;
+}
+body header #navBar ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+body header #navBar ul li {
+  margin-left: 3em;
+  font-size: 1.3em;
+}
+body header #navBar ul li a {
+  color: white;
+}
+body #welcomeBox {
+  background-image: url("img/code-background.jpg");
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #welcomeBox h1 {
+  color: white;
+}
+body #mainBody {
+  margin-top: 75px;
+  max-width: 770px;
+}
+body #mainBody #buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  max-width: 545px;
+  margin: 40px auto 0 auto;
+}
+body #mainBody #buttons #sort {
+  display: none;
+}
+body #mainBody #buttons .sortButton {
+  background: none;
+  border: none;
+  width: 130px;
+  height: 34px;
+  line-height: 2.2;
+  box-shadow: 0px 7px 5.52px 2.48px rgba(0, 0, 0, 0.29);
+}
+body #mainBody #buttons .sortButton span {
+  position: relative;
+  bottom: 6px;
+  color: black;
+}
+body #mainBody #buttons .sortButton:focus {
+  outline: none;
+}
+body #mainBody #buttons .sortButton:active {
+  opacity: 0.8;
+}
+body #mainBody #buttons .sortButton:hover {
+  text-decoration: none;
+}
+body #mainBody #buttons .buttonActive {
+  background-image: url("img/activeButton.png");
+  background-repeat: no-repeat;
+}
+body #mainBody #buttons .buttonInActive {
+  background-image: url("img/inActiveButton.png");
+  background-repeat: no-repeat;
+}
+body #mainBody #portfolio {
+  margin: 77px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 509px;
+  justify-content: space-between;
+  align-content: space-between;
+}
+body #mainBody #portfolio .portfolioItem {
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1), 0px 26px 30px 0px rgba(0, 0, 0, 0.15), 0px 28px 45px 0px rgba(0, 0, 0, 0.3);
+  width: 220px;
+  height: 220px;
+  border: 1px inset rgba(0, 0, 0, 0.35);
+  padding: 0;
+}
+body #mainBody #portfolio .portfolioItem img, body #mainBody #portfolio .portfolioItem div {
+  width: 100%;
+  height: 100%;
+}
+body #mainBody #modal .modal-dialog {
+  max-width: 75vw;
+}
+body #mainBody #modal .modal-dialog .modal-content {
+  height: 90vh;
+}
+body #mainBody #modal .modal-dialog .modal-title {
+  margin: auto;
+}
+body #mainBody #modal .modal-dialog .close {
+  margin-left: 0;
+}
+body #mainBody #modal .modal-dialog iframe {
+  width: 100%;
+  height: 100%;
+}
+body #mainBody #modal .modal-dialog #loadingMessage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body article .wp-block-separator {
+  border-top: 1px solid black;
+}
+body article .wp-block-image {
+  margin-bottom: 3em;
+  margin-top: 3em;
+}
+body article .wp-block-image figure {
+  border: 2px solid black;
+}
+body footer {
+  background-image: url("img/footer%20gradiant.png");
+  background-size: contain;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  margin-top: 5em;
+}
+body footer a {
+  color: darkblue;
+}
+body footer img {
+  max-height: 122px;
+}
+body footer ul li {
+  font-size: 36px;
+}
+body footer ul li a {
+  position: relative;
+}
+body footer ul li a i {
+  position: relative;
+  z-index: 1;
+}
+body footer ul li a::after {
+  content: "";
+  background: white;
+  z-index: 0;
+  width: 20px;
+  top: 13px;
+  height: 24px;
+  right: 7px;
+  position: absolute;
+}
+@media only screen and (min-width: 400px) and (max-width: 726px) {
+  body #mainBody #portfolio {
+    min-height: 420px;
+  }
+  body #mainBody #portfolio .portfolioItem {
+    width: 175px;
+    height: 175px;
+  }
+}
+@media only screen and (max-width: 399px) {
+  body #mainBody #portfolio .portfolioItem {
+    width: 141px;
+    height: 141px;
+  }
+}
+@media only screen and (max-width: 499px) {
+  body #mainBody #buttons {
+    display: grid;
+    grid-gap: 26px;
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 470px) {
+  body #mainBody #buttons .sortButton {
+    width: 91px;
+    height: 24px;
+  }
+  body #mainBody #buttons .buttonActive {
+    background-image: url("img/activeButton.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  body #mainBody #buttons .buttonInActive {
+    background-image: url("img/inActiveButton.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.portfolioItem:hover {
+  cursor: pointer;
+}
+
+/*
+body{
+
+    .sortButton{
+        background:none;
+        border:none;
+        width:130px;
+        height:45px;
+        font-size:20px;
+        span{
+            position:relative;
+            bottom:6px;
+        }
+    }
+    .sortButton:focus{
+        outline:none;
+    }
+    .sortButton:active{
+        opacity: 0.8;
+    }
+    .buttonActive{
+        background-image:url('img/activeButton.png');
+    }
+    .buttonInActive{
+        background-image:url('img/inActiveButton.png');
+    }
+
+
+
+    h1{
+        font-size:map-get($deskTop,h1FontSize);
+    }
+    header{
+        background-image: url("img/header%20gradiant.png");
+        background-size: contain;
+        height:100px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+        h1{
+            a{
+                font-size:map-get($deskTop,h1FontSize);
+                color:white;
+            }
+            a:hover{
+                color:white;
+                text-decoration: none;
+            }
+        }
+        #navBar{
+
+            ul{
+                list-style: none;
+                margin-bottom:0;
+
+                li{
+                    margin-left:3em;
+                    font-size:1.3em;
+
+                    a{
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+
+    #welcomeBox{
+        background-image: url("img/code-background.jpg");
+        background-size: cover;
+        height:300px;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+
+        h1{
+            color:white;
+        }
+    }
+
+    #mainBody{
+        margin-top:75px;
+    }
+}
+footer{
+background-image: url("img/footer%20gradiant.png");
+    background-size: contain;
+    text-align:center;
+    padding-top:40px;
+    padding-bottom:10px;
+    img{
+        max-height:122px;
+    }
+}
+h3{
+    font-size:1.4em;
+}
+
+#homeBackground{
+    background-image: url("img/code-background.jpg");
+    background-size:cover;
+    min-height:100vh;
+    display:grid;
+    align-items: center;
+
+}
+
+
+#postFeed{
+    @media (min-width:768px){
+        margin-top:90px;
+    }
+    @media (max-width:767px){
+        margin-top:3em;
+    }
+}
+
+#projectsOutput{
+    margin-top:5em;
+}
+
+
+
+#mainBody h2 a:hover, #mainBody h2 a, #mainBody h3 a:hover, #mainBody h3 a{
+
+    color:black;
+}
+
+#mainBody img{
+    border-style:solid; 
+    border-width:1px;
+    border-color:black;
+}
+
+#favProjects{
+    margin:auto;
+    margin-bottom: 0px;
+    max-width:1500px;
+    h2{
+        margin-top:30px;
+        margin-bottom:113px;
+    }
+    img{
+        width:100%;
+        max-height:236px;
+    }
+
+    @media (min-width:768px){
+        div:nth-of-type(1){
+            margin-bottom:148px;
+        }
+        .row:nth-of-type(2){
+            margin-bottom:148px;
+        }
+
+    }
+    @media (max-width:767px){
+        figure{
+            margin-bottom:3em;
+        }
+    }
+
+}
+
+#ProjectDivider{
+    height:50px;
+    background:blue;
+}
+
+.more-link{
+    display:none;
+}
+hr{
+    background:black;
+    height:1px;
+}
+
+.screen-reader-text , #searchsubmit{
+    display:none;
+}
+
+#s{
+    width:150px;
+    border-color: black;    
+    border-width: 1px;
+    border-style: solid;
+}
+footer ul li{
+    margin-top:15px;
+}
+
+.socialIcon{
+    font-size:36px;
+
+}
+
+.indexPost{
+    word-wrap: break-word;
+}
+
+
+
+
+.indexPost img{
+    max-width: 150px;
+    max-height: 150px;   
+    border-style:solid; 
+    border-width:1px;
+    border-color:black;
+}
+
+*/
+
+/*# sourceMappingURL=style.css.map */

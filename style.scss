@@ -1,0 +1,557 @@
+/*
+Theme Name: patrickp.tech 2020
+Author: Patrick Pelayo
+Description: A redesign of the home site 3-8-2020
+Version: 0.0.1
+
+*/
+
+//desktop settings
+$deskTop:(
+    h1FontSize:40px,
+    h2FontSize:32px,
+    pFontSize:20px,
+    spanFontSize:20px
+);
+
+$mobile:(
+    h1FontSize:20px,
+    h2FontSize:18px,
+    pFontSize:15px,
+    spanFontSize:15px
+);
+
+$mobileWidth:470px;
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    
+    //settings
+    h1{
+        font-size: map-get($deskTop,h1FontSize);
+    }
+    h2{
+        font-size:map-get($deskTop,h2FontSize);
+    }
+    p{
+        font-size:map-get($deskTop,pFontSize);
+    }
+    span{
+        font-size:map-get($deskTop,spanFontSize);
+    }
+}
+
+@media only screen and (max-width:$mobileWidth){
+//Mobile
+    
+        //settings
+        h1{
+            font-size: map-get($mobile,h1FontSize);
+        }
+        h2{
+            font-size:map-get($mobile,h2FontSize);
+        }
+        p{
+            font-size:map-get($mobile,pFontSize);
+        }
+        span{
+            font-size:map-get($mobile,spanFontSize);
+        }
+}
+
+//CSS redone below
+body{
+        
+    //desktop
+    //width > 726
+     header{
+        background-image: url("img/header%20gradiant.png");
+        background-size: contain;
+        height:100px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+        h1{
+            a{
+                color:white;
+            }
+            a:hover{
+                color:white;
+                text-decoration: none;
+            }
+        }
+        #navBar{
+            ul{
+                list-style: none;
+                margin-bottom:0;
+
+                li{
+                    margin-left:3em;
+                    font-size:1.3em;
+
+                    a{
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+    
+    #welcomeBox{
+        background-image: url("img/code-background.jpg");
+        background-size: cover;
+        height:300px;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        
+        h1{
+            color:white;
+        }
+    }
+    
+    #mainBody{
+        margin-top:75px;
+        max-width:770px;
+        #buttons{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-content:space-between;
+            max-width:545px;
+            margin:40px auto 0 auto;
+            
+            #sort{
+                display:none;
+            }
+            
+            .sortButton{
+                background:none;
+                border:none;
+                width:130px;
+                height:34px;
+                line-height: 2.2;
+                box-shadow: 0px 7px 5.52px 2.48px rgba(0, 0, 0, 0.29);
+                span{
+                    position:relative;
+                    bottom:6px;
+                    color:black;
+                }
+            }
+            .sortButton:focus{
+                outline:none;
+            }
+            .sortButton:active{
+                opacity: 0.8;
+            }
+            .sortButton:hover{
+                text-decoration: none;
+            }
+            .buttonActive{
+                background-image:url('img/activeButton.png');
+                background-repeat: no-repeat;
+            }
+            .buttonInActive{
+                background-image:url('img/inActiveButton.png');
+                background-repeat: no-repeat;
+            }  
+        }
+        
+        #portfolio{
+            margin:77px auto 0 auto;
+            display:flex;
+            flex-wrap: wrap;
+            min-height:509px;
+            justify-content: space-between;
+            align-content: space-between;
+            
+            .portfolioItem{
+                box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1),0px 26px 30px 0px rgba(0, 0, 0, 0.15),0px 28px 45px 0px rgba(0, 0, 0, 0.3);
+                width:220px;
+                height:220px;
+                border: 1px inset rgba(0,0,0,0.35);
+                padding:0;
+                
+                
+                img ,div{
+                    width:100%;
+                    height:100%;
+                }
+                
+            }
+        }
+        
+        #modal{
+            .modal-dialog{
+                max-width:75vw;
+                
+                .modal-content{
+                    height:90vh;
+                }
+                .modal-title{
+                    margin:auto;
+                }
+                .close{
+                    margin-left:0;
+                }
+                iframe{
+                    width:100%;
+                    height:100%;
+
+                }
+                #loadingMessage{
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    
+    //this is used inside the post
+    article{
+        .wp-block-separator{
+            border-top: 1px solid black;
+        }
+        .wp-block-image{
+            margin-bottom: 3em;
+            margin-top: 3em;
+            
+            figure{
+                border: 2px solid black;
+            }
+        }
+    }
+    
+    footer{
+        background-image: url("img/footer%20gradiant.png");
+            background-size: contain;
+            text-align:center;
+            padding-top:40px;
+            padding-bottom:10px;
+            font-weight: bold;
+            margin-top:5em;
+        
+            a{
+                color:darkblue;
+            }
+        
+            img{
+                max-height:122px;
+            }
+        
+        ul{
+            li{
+                font-size:36px;
+                a{
+                    position:relative;
+                    i{
+                        position:relative;
+                        z-index:1;
+                    }
+                } 
+                a::after{
+                    content: "";
+                    background: white;
+                    z-index: 0;
+                    width: 20px;
+                    top: 13px;
+                    height: 24px;
+                    right: 7px;
+                    position: absolute;
+                }
+            }
+
+        }
+    }
+    
+    
+    
+    //
+    //600 - 726 Resize the portfolio items
+    @media only screen and (min-width: 400px) and (max-width: 726px){
+        #mainBody{
+            #portfolio{
+                min-height: 420px;
+                .portfolioItem{
+                    width:175px;
+                    height:175px;
+                }
+            }
+        }
+    }
+    
+    //
+    //0-399 Resize the Portfolio Items
+    @media only screen and (max-width: 399px){
+        #mainBody{
+                
+            
+            #portfolio{
+                
+                .portfolioItem{
+                    width:141px;
+                    height:141px;
+                }
+            }
+        }
+    }
+    
+    //
+    //0-499 Resize and re-orient the buttons
+    @media only screen and (max-width:499px){
+        #mainBody{
+            #buttons{
+                display:grid;
+                grid-gap: 26px;
+                grid-template-columns:auto auto;
+            }
+        }
+    }
+    
+    //setup buttons for mobileWidths
+    @media only screen and (max-width:$mobileWidth){
+        
+        #mainBody{
+            #buttons{
+                .sortButton{
+                    width:91px;
+                    height:24px;
+                }
+                
+                .buttonActive{
+                    background-image:url('img/activeButton.png');
+                    background-repeat: no-repeat;
+                    background-size:contain;
+                }
+                .buttonInActive{
+                    background-image:url('img/inActiveButton.png');
+                    background-repeat: no-repeat;
+                    background-size:contain;
+                }  
+            }
+        }
+    }
+}
+
+
+
+.portfolioItem:hover{
+    cursor: pointer;
+}
+/*
+body{
+    
+    .sortButton{
+        background:none;
+        border:none;
+        width:130px;
+        height:45px;
+        font-size:20px;
+        span{
+            position:relative;
+            bottom:6px;
+        }
+    }
+    .sortButton:focus{
+        outline:none;
+    }
+    .sortButton:active{
+        opacity: 0.8;
+    }
+    .buttonActive{
+        background-image:url('img/activeButton.png');
+    }
+    .buttonInActive{
+        background-image:url('img/inActiveButton.png');
+    }
+    
+    
+    
+    h1{
+        font-size:map-get($deskTop,h1FontSize);
+    }
+    header{
+        background-image: url("img/header%20gradiant.png");
+        background-size: contain;
+        height:100px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+        h1{
+            a{
+                font-size:map-get($deskTop,h1FontSize);
+                color:white;
+            }
+            a:hover{
+                color:white;
+                text-decoration: none;
+            }
+        }
+        #navBar{
+
+            ul{
+                list-style: none;
+                margin-bottom:0;
+
+                li{
+                    margin-left:3em;
+                    font-size:1.3em;
+
+                    a{
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+    
+    #welcomeBox{
+        background-image: url("img/code-background.jpg");
+        background-size: cover;
+        height:300px;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        
+        h1{
+            color:white;
+        }
+    }
+    
+    #mainBody{
+        margin-top:75px;
+    }
+}
+footer{
+background-image: url("img/footer%20gradiant.png");
+    background-size: contain;
+    text-align:center;
+    padding-top:40px;
+    padding-bottom:10px;
+    img{
+        max-height:122px;
+    }
+}
+h3{
+    font-size:1.4em;
+}
+
+#homeBackground{
+    background-image: url("img/code-background.jpg");
+    background-size:cover;
+    min-height:100vh;
+    display:grid;
+    align-items: center;
+    
+}
+
+
+#postFeed{
+    @media (min-width:768px){
+        margin-top:90px;
+    }
+    @media (max-width:767px){
+        margin-top:3em;
+    }
+}
+
+#projectsOutput{
+    margin-top:5em;
+}
+
+
+
+#mainBody h2 a:hover, #mainBody h2 a, #mainBody h3 a:hover, #mainBody h3 a{
+    
+    color:black;
+}
+
+#mainBody img{
+    border-style:solid; 
+    border-width:1px;
+    border-color:black;
+}
+
+#favProjects{
+    margin:auto;
+    margin-bottom: 0px;
+    max-width:1500px;
+    h2{
+        margin-top:30px;
+        margin-bottom:113px;
+    }
+    img{
+        width:100%;
+        max-height:236px;
+    }
+    
+    @media (min-width:768px){
+        div:nth-of-type(1){
+            margin-bottom:148px;
+        }
+        .row:nth-of-type(2){
+            margin-bottom:148px;
+        }
+        
+    }
+    @media (max-width:767px){
+        figure{
+            margin-bottom:3em;
+        }
+    }
+    
+}
+
+#ProjectDivider{
+    height:50px;
+    background:blue;
+}
+
+.more-link{
+    display:none;
+}
+hr{
+    background:black;
+    height:1px;
+}
+
+.screen-reader-text , #searchsubmit{
+    display:none;
+}
+
+#s{
+    width:150px;
+    border-color: black;    
+    border-width: 1px;
+    border-style: solid;
+}
+footer ul li{
+    margin-top:15px;
+}
+
+.socialIcon{
+    font-size:36px;
+    
+}
+
+.indexPost{
+    word-wrap: break-word;
+}
+
+
+
+
+.indexPost img{
+    max-width: 150px;
+    max-height: 150px;   
+    border-style:solid; 
+    border-width:1px;
+    border-color:black;
+}
+
+*/

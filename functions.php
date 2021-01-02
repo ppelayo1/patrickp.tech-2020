@@ -46,7 +46,7 @@ function wp_add_styles(){
     wp_register_style('open_sans',"https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
     wp_enqueue_style('open_sans');
     
-    wp_register_style('style', get_stylesheet_uri());
+    wp_register_style('style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('style');
     
     

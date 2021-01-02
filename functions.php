@@ -38,15 +38,12 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 function wp_add_styles(){
     //enque and register the styles
     wp_register_style('BootStrap' ,'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css');
-    wp_enqueue_style('BootStrap');
-
+    
     wp_register_style('Line_Awesome', 'https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css');
-    wp_enqueue_style('Line_Awesome');
     
     wp_register_style('open_sans',"https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-    wp_enqueue_style('open_sans');
-    
-    wp_register_style('style', get_template_directory_uri() . '/style.css');
+   
+    wp_register_style('style', get_template_directory_uri() . '/style.css',array('BootStrap','Line_Awesome','open_sans'));
     wp_enqueue_style('style');
     
     

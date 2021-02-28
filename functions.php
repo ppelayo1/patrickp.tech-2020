@@ -84,6 +84,8 @@ function ajaxCall(){
     $returnVal = [];
     $queryTerm = $_REQUEST['ajax_term'];
     
+    
+    
     //check nounce
     if(wp_verify_nonce($_REQUEST['nonce'],AJAX_NONCE)){
         if($queryTerm != RANDOM){
@@ -114,9 +116,13 @@ function ajaxCall(){
                     }         
                 }
                 
+                //pattern for regex to ensure the string is always https for the iframe
+                $pattern = '/http:/i';
+                $secureLink = 'https:';
+                
                 if($addPost){
                     array_push($returnVal, 
-                     '<figure class="portfolioItem" data-title="'.get_the_title().'" data-pagelink="'.get_page_link().'" data-target="#modal" data-toggle="modal">' 
+                     '<figure class="portfolioItem" data-title="'.get_the_title().'" data-pagelink="'. preg_replace($pattern,$secureLink,get_page_link()).'" data-target="#modal" data-toggle="modal">' 
                      .get_the_post_thumbnail().
                      '</figure>');
 
